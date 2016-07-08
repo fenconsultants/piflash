@@ -5,6 +5,8 @@ import subprocess
 import time
 import os
 
+HEXDIR = '/mnt/usb'
+
 menu = ['[ Program ]', '[ Erase ]', '[ Shutdown ]']
 files = []
 index = 0
@@ -41,7 +43,7 @@ def program():
     lcd.clear()
     lcd.set_color(0.0, 0.0, 1.0)
     lcd.message('Programming..\n')
-    proc = subprocess.Popen(['/usr/local/bin/st-flash', 'write', '/home/pi/fenflash/' + files[findex], '0x8000000'])
+    proc = subprocess.Popen(['/usr/local/bin/st-flash', 'write', HEXDIR + '/' + files[findex], '0x8000000'])
     proc.wait()
     if proc.returncode == 0:
         lcd.set_color(0.0, 1.0, 0.0)
@@ -80,7 +82,7 @@ action = { 0 : program,
 
 lcd = LCD.Adafruit_CharLCDPlate()
 
-for file in os.listdir('/home/pi/fenflash'):
+for file in os.listdir(HEXDIR):
     if file.endswith('.hex'):
         files.append(file)
 
