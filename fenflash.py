@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+# Raspberry Pi ST-Link JTAG appliance.
+# Copyright Fen Consultants Ltd 2016
+#
+# License: Freeware
+#          This software is free to distribute and use as you wish.
+
 import Adafruit_CharLCD as LCD
 import subprocess
 import time
