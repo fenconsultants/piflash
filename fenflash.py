@@ -19,6 +19,7 @@ index = 0
 findex = 0
 quit = False
 
+# Draw menu
 def refresh():
     global index
     lcd.clear()
@@ -27,24 +28,25 @@ def refresh():
     if index == 0 and len(files) > 0:
         lcd.message(files[findex])
 
+# Test for any button pressed
 def is_pressed():
-    if lcd.is_pressed(LCD.SELECT): return True
-    if lcd.is_pressed(LCD.LEFT): return True
-    if lcd.is_pressed(LCD.RIGHT): return True
-    if lcd.is_pressed(LCD.UP): return True
-    if lcd.is_pressed(LCD.DOWN): return True
-    return False
+    if (lcd.is_pressed(LCD.SELECT) or
+        lcd.is_pressed(LCD.LEFT) or
+        lcd.is_pressed(LCD.RIGHT) or
+        lcd.is_pressed(LCD.UP) or
+        lcd.is_pressed(LCD.DOWN)):
+        return True
+    else:
+        return False
 
+# Wait for any key to be pressed and released
 def anykey():
     while is_pressed(): pass
     while True:
-        if lcd.is_pressed(LCD.SELECT): break;
-        if lcd.is_pressed(LCD.LEFT): break;
-        if lcd.is_pressed(LCD.RIGHT): break;
-        if lcd.is_pressed(LCD.UP): break;
-        if lcd.is_pressed(LCD.DOWN): break;
+        if is_pressed() == True: break;
     while is_pressed(): pass
 
+# Execute JTAG program operation
 def program():
     lcd.clear()
     lcd.set_color(0.0, 0.0, 1.0)
@@ -59,6 +61,7 @@ def program():
         lcd.message('Failed!')
     anykey()
 
+# Execute JTAG erase operation
 def erase():
     lcd.clear()
     lcd.set_color(0.0, 0.0, 1.0)
@@ -73,6 +76,7 @@ def erase():
         lcd.message('Failed!')
     anykey()
 
+# Execute shutdown operation
 def shutdown():
     global quit
     lcd.clear()
