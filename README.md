@@ -22,7 +22,7 @@ Mount USB memory key containing hex files at /mnt/usb or change HEXDIR
 in the script.
 
 Call startup.py early in boot sequence if you want a loading message,
-e.g. from cron @reboot. Call fenflash.py later after USB devices are
+e.g. from cron @reboot. Call piflash.py later after USB devices are
 enumerated and external filesystem is mounted, e.g. late in runlevel 5.
 
 Use left/right buttons to cycle through menu options. On Program option,

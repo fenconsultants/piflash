@@ -13,4 +13,4 @@ lcd = LCD.Adafruit_CharLCDPlate()
 
 lcd.set_color(1.0, 1.0, 1.0)
 lcd.clear()
-lcd.message('Fen Flash 1.0\nStarting...')
+lcd.message('Pi Flash 1.0\nStarting...')
