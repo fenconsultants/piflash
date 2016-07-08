@@ -1,22 +1,23 @@
-Raspberry Pi ST-Link JTAG appliance.
+Raspberry Pi ST-Link JTAG appliance
+===================================
 
 Copyright Fen Consultants Ltd 2016
 
-License: Freeware
-         This software is free to distribute and use as you wish.
+    License: Freeware
+    This software is free to distribute and use as you wish.
 
 Self contained JTAG flashing appliance for ST microcontrollers.
 
 Hardware configuration:
 
-Raspberry Pi (tested with model 3-B, should work with others)
-Adafruit RGB LCD Plate w/ Keypad
-ST ST-Link V2
+* Raspberry Pi (tested with model 3-B, should work with others)
+* Adafruit RGB LCD Plate w/ Keypad
+* ST ST-Link V2
 
 Depends on st-link tool and ADAFruit LCD Python library:
 
-https://github.com/texane/stlink
-https://github.com/adafruit/Adafruit_Python_CharLCD
+* https://github.com/texane/stlink
+* https://github.com/adafruit/Adafruit_Python_CharLCD
 
 Mount USB memory key containing hex files at /mnt/usb or change HEXDIR
 in the script.
